@@ -1,0 +1,19 @@
+<%= bootstrap_form_with(model: audio) do |form| %>
+  <% if audio.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(audio.errors.count, "error") %> prohibited this audio from being saved:</h2>
+
+      <ul>
+        <% audio.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= form.text_field :title %>
+    <%= form.text_area :description %>
+    <%= form.text_area :metadata %>
+    <%= form.file_field :audio_file %>
+    <%= form.submit %>
+<% end %>

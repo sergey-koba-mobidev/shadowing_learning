@@ -1,0 +1,22 @@
+<div id="<%= dom_id audio %>">
+  <p>
+    <strong>Title:</strong>
+    <%= audio.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= audio.description %>
+  </p>
+
+  <p>
+    <strong>Metadata:</strong>
+    <%= audio.metadata %>
+  </p>
+
+  <p>
+    <strong>Audio file:</strong>
+    <%= link_to audio.audio_file.filename, audio.audio_file if audio.audio_file.attached? %>
+  </p>
+
+</div>

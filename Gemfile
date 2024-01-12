@@ -44,6 +44,11 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# Bootstrap
+gem "bootstrap", "~> 5.0"
+gem "bootstrap_form", "~> 5.4"
+gem "sassc-rails"
+
 # Background processing for Ruby
 gem "sidekiq"
 gem "sidekiq-cron", "~> 1.1"
