@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Phrases</h1>
+
+<div id="phrases">
+  <% @phrases.each do |phrase| %>
+    <%= render phrase %>
+    <p>
+      <%= link_to "Show this phrase", phrase %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New phrase", new_phrase_path %>

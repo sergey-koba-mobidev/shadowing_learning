@@ -1,0 +1,32 @@
+<%= form_with(model: phrase) do |form| %>
+  <% if phrase.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(phrase.errors.count, "error") %> prohibited this phrase from being saved:</h2>
+
+      <ul>
+        <% phrase.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.label :audio_file, style: "display: block" %>
+    <%= form.file_field :audio_file %>
+  </div>
+
+  <div>
+    <%= form.label :audio_id, style: "display: block" %>
+    <%= form.text_field :audio_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

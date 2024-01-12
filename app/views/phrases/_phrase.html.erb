@@ -1,0 +1,17 @@
+<div id="<%= dom_id phrase %>">
+  <p>
+    <strong>Body:</strong>
+    <%= phrase.body %>
+  </p>
+
+  <p>
+    <strong>Audio file:</strong>
+    <%= link_to phrase.audio_file.filename, phrase.audio_file if phrase.audio_file.attached? %>
+  </p>
+
+  <p>
+    <strong>Audio:</strong>
+    <%= phrase.audio_id %>
+  </p>
+
+</div>
