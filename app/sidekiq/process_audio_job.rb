@@ -62,5 +62,6 @@ class ProcessAudioJob
     end
 
     audio.update(metadata: result_hash.to_json)
+    CreatePhrasesJob.perform_async(audio.id)
   end
 end

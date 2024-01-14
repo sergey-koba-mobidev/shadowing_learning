@@ -5,6 +5,8 @@ ARG PG_MAJOR
 ARG NODE_MAJOR
 ARG YARN_VERSION
 
+RUN apt update -qq && apt upgrade -y
+
 # Common dependencies
 RUN apt-get update -qq \
   && DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
@@ -17,6 +19,7 @@ RUN apt-get update -qq \
   less \
   git \
   mc \
+  sox \
   && apt-get clean \
   && rm -rf /var/cache/apt/archives/* \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \

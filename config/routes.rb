@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "audios#index"
+
+  get '/learn', to: 'learn#learn', as: :learn
 end
