@@ -1,5 +1,5 @@
 class PhrasesController < ApplicationController
-  before_action :set_phrase, only: %i[ show edit update destroy ]
+  before_action :set_phrase, only: %i[ show edit update destroy dislike ]
 
   # GET /phrases or /phrases.json
   def index
@@ -55,6 +55,11 @@ class PhrasesController < ApplicationController
       format.html { redirect_to phrases_url, notice: "Phrase was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def dislike
+    res = @phrase.update(disliked_at: Time.zone.now)
+    redirect_to learn_path
   end
 
   private
