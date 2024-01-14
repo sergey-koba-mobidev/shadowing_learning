@@ -2,6 +2,11 @@
 
 <%= render @audio %>
 
+<p>
+    <strong>Audio file:</strong>
+    <%= link_to @audio.audio_file.filename, @audio.audio_file if @audio.audio_file.attached? %>
+</p>
+
 <div>
   <%= link_to "Edit this audio", edit_audio_path(@audio) %> |
   <%= link_to "Back to audios", audios_path %>

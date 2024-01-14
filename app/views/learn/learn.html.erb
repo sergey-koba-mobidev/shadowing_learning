@@ -1,5 +1,9 @@
 <h1><%= @phrase.body %></h1>
 
+<div>
+  <%= @phrase.audio.title %>
+</div>
+
 <div data-controller="audio">
   <%= audio_tag(@phrase.audio_path.sub("public", ""), controls: true, id: "phrase-audio") %>
 </div>

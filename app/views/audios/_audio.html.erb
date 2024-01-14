@@ -1,22 +1,13 @@
-<div id="<%= dom_id audio %>">
-  <p>
-    <strong>Title:</strong>
-    <%= audio.title %>
-  </p>
+<div class="row" id="<%= dom_id audio %>">
+  <div class="col-1">
+    <%= link_to audio.id, audio  %>
+  </div>
+  <div class="col-5">
+    <%= link_to audio.title, audio  %>
+  </div>
 
-  <p>
-    <strong>Description:</strong>
+  <div class="col-6">
     <%= audio.description %>
-  </p>
-
-  <p>
-    <strong>Metadata:</strong>
-    <%= audio.metadata %>
-  </p>
-
-  <p>
-    <strong>Audio file:</strong>
-    <%= link_to audio.audio_file.filename, audio.audio_file if audio.audio_file.attached? %>
-  </p>
+  </div>
 
 </div>
