@@ -25,6 +25,7 @@ class AudiosController < ApplicationController
 
     respond_to do |format|
       if @audio.save
+        ProcessAudioJob.perform_async(@audio.id)
         format.html { redirect_to audio_url(@audio), notice: "Audio was successfully created." }
         format.json { render :show, status: :created, location: @audio }
       else

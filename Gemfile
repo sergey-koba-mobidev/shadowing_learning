@@ -53,6 +53,9 @@ gem "sassc-rails"
 gem "sidekiq"
 gem "sidekiq-cron", "~> 1.1"
 
+# Google
+gem "google-cloud-speech"
+gem "google-cloud-storage", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
