@@ -18,9 +18,9 @@ class CreatePhrasesJob
         start_time = transcript[:words].first[:start_time]
         duration = transcript[:words].last[:end_time] - start_time
 
-        res = `sox #{file.path} public/audios/phrase_#{phrase.id}.wav trim #{start_time.round(1)} #{duration.round(1) + 0.2}`
-        logger.info "--- `sox #{file.path} public/audios/phrase_#{phrase.id}.wav trim #{start_time.round(1)} #{duration.round(1) + 0.2}`"
-        phrase.update(audio_path: "public/audios/phrase_#{phrase.id}.wav")
+        res = `sox #{file.path} public/phrase_audios/phrase_#{phrase.id}.wav trim #{start_time.round(1)} #{duration.round(1) + 0.2}`
+        logger.info "--- `sox #{file.path} public/phrase_audios/phrase_#{phrase.id}.wav trim #{start_time.round(1)} #{duration.round(1) + 0.2}`"
+        phrase.update(audio_path: "public/phrase_audios/phrase_#{phrase.id}.wav")
       end
     end
   end

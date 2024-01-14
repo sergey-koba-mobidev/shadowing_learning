@@ -1,2 +1,9 @@
 <h1><%= @phrase.body %></h1>
-<%= link_to "Next", learn_path, class: "btn btn-primary" %>
+
+<div data-controller="audio">
+  <%= audio_tag(@phrase.audio_path.sub("public", ""), controls: true, id: "phrase-audio") %>
+</div>
+
+<div class="btn-group" role="group">
+  <%= link_to "Next", learn_path, class: "btn btn-primary" %>
+</div>
