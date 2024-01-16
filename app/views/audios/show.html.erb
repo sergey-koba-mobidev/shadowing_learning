@@ -13,3 +13,8 @@
 
   <%= button_to "Destroy this audio", @audio, method: :delete %>
 </div>
+
+<p>
+    <strong>Metadata:</strong>
+    <%= @audio.metadata %>
+</p>

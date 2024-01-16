@@ -2,12 +2,13 @@ Rails.application.routes.draw do
   require "sidekiq/web"
   mount Sidekiq::Web => "/sidekiq"
 
-  resources :phrases do
-    member do
-      get :dislike
+  resources :audios do
+    resources :phrases do
+      member do
+        get :dislike
+      end
     end
   end
-  resources :audios
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

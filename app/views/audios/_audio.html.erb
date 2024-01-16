@@ -6,8 +6,12 @@
     <%= link_to audio.title, audio  %>
   </div>
 
-  <div class="col-6">
+  <div class="col-4">
     <%= audio.description %>
+  </div>
+
+  <div class="col-2">
+    <%= link_to "phrases", audio_phrases_path(audio_id: audio.id), class: "btn btn-primary" %>
   </div>
 
 </div>

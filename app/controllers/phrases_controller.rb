@@ -3,7 +3,8 @@ class PhrasesController < ApplicationController
 
   # GET /phrases or /phrases.json
   def index
-    @phrases = Phrase.all
+    @audio = Audio.find(params[:audio_id])
+    @phrases = Phrase.where(audio_id: params[:audio_id]).all
   end
 
   # GET /phrases/1 or /phrases/1.json

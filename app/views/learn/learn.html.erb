@@ -9,6 +9,6 @@
 </div>
 
 <div class="btn-group" role="group">
-  <%= link_to "Dislike", dislike_phrase_path(@phrase), class: "btn btn-danger" %>
+  <%= link_to "Dislike", dislike_audio_phrase_path(@phrase.audio, @phrase), class: "btn btn-danger" %>
   <%= link_to "Next", learn_path, class: "btn btn-primary" %>
 </div>

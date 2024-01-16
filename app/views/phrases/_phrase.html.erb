@@ -1,17 +1,17 @@
-<div id="<%= dom_id phrase %>">
-  <p>
-    <strong>Body:</strong>
+<div class="row" id="<%= dom_id phrase %>">
+  <div class="col-1">
+    <%= link_to phrase.id, audio_phrase_path(phrase.audio, phrase)  %>
+  </div>
+  <div class="col-5">
     <%= phrase.body %>
-  </p>
+  </div>
 
-  <p>
-    <strong>Audio file:</strong>
-    <%= link_to phrase.audio_file.filename, phrase.audio_file if phrase.audio_file.attached? %>
-  </p>
+  <div class="col-3">
+    <%= phrase.audio_path %>
+  </div>
 
-  <p>
-    <strong>Audio:</strong>
-    <%= phrase.audio_id %>
-  </p>
+  <div class="col-3">
+    <%= phrase.disliked_at.nil? ? "" : "Disliked" %>
+  </div>
 
 </div>
